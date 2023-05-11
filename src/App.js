@@ -4,7 +4,7 @@ import Home from "./Views/Home/Home";
 import Landing from "./Views/Landig/Landig";
 import Favorites from "./Views/Favorites/Favorites";
 import Detail from "./Views/Detail/Detail";
-import Navbar from "./Views/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import About from "./Views/About/About";
 
 function App() {
