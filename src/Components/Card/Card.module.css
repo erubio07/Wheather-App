@@ -37,6 +37,27 @@
     font-size: 1.2rem;
   }
 
+  .closeButton {
+    
+    top: 225px; /* ajusta la posición según tus necesidades */
+    right: 250px; /* ajusta la posición según tus necesidades */
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    transform: scale(1.1);
+    background-color: #1eb3ee;
+  }
+
   /* Estilos para pantallas más grandes */
 @media only screen and (min-width: 768px) {
     .weatherCard {

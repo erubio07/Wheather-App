@@ -9,7 +9,7 @@ import style from "./Home.module.css";
 const Home = () => {
   const dispatch = useDispatch();
   const city = useSelector((state) => state.cities);
-  console.log(city);
+  // console.log(city);
 
   useEffect(() => {
     if (city.length === 0 || city.updated) {
@@ -33,8 +33,6 @@ const Home = () => {
     }
   };
 
-  const handleClose = () => {};
-
   return (
     <div className={style.body}>
       <Filter
@@ -46,6 +44,7 @@ const Home = () => {
         {city.map((c) => {
           return (
             <Card
+              key={c.location.name}
               name={c.location.name}
               img={c.current.condition.icon}
               condition={c.current.condition.text}
