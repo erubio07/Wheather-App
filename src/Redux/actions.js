@@ -1,18 +1,27 @@
 import axios from "axios";
-import { GET_CITY } from "./types";
-const apiKey = "cacb341f64cb4382b82121808230605";
+import { GET_CITY, CLOSE_CARD } from "./types";
+const apiKey = "01e86b8b56ec4c11aff162352231205";
 
 export const getCity = (name) => {
-  return async function (dispatch) {
+  return async function (dispatch, getState) {
     let city = await axios.get(
       `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${name}&aqi=no`
     );
+    let newCity = city.data;
+    let cities = [...getState().cities, newCity];
     // console.log(city.data);
     return dispatch({
       type: GET_CITY,
-      payload: city.data,
+      payload: cities,
     });
   };
 };
 
 // getCity("London");
+
+export const closeCard = (name) => {
+  return {
+    type: CLOSE_CARD,
+    payload: name,
+  };
+};

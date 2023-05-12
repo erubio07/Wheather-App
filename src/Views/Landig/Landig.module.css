@@ -1,0 +1,78 @@
+.landingcontainer {
+background-image: url("https://sdemocional.org/wp-content/uploads/2022/01/AdobeStock_93552593-scaled.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2rem;
+    width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.landinb {
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.landinb:hover {
+  background-color: #0052cc;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .landinb {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    .landinb {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+  }

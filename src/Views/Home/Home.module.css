@@ -1,0 +1,41 @@
+.body {
+    background-image: url('../Image/Home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+  }
+
+
+.cardcontainer {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .cardcontainer {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  /* Para pantallas más pequeñas que 768px */
+@media (max-width: 767px) {
+    .cardcontainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Para pantallas más grandes o iguales a 768px */
+  @media (min-width: 768px) {
+    .cardcontainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+}

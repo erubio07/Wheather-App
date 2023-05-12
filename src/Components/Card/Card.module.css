@@ -1,0 +1,52 @@
+.weatherCard {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .cityName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .weatherIcon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .condition {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .temperature {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .feelsLike {
+    font-size: 1.2rem;
+  }
+
+  /* Estilos para pantallas más grandes */
+@media only screen and (min-width: 768px) {
+    .weatherCard {
+      max-width: 300px; /* ajusta el valor según tus necesidades */
+    }
+  }
+  
+  /* Estilos para pantallas más pequeñas */
+  @media only screen and (max-width: 480px) {
+    .weatherCard {
+      max-width: 150px; /* ajusta el valor según tus necesidades */
+    }
+  }
