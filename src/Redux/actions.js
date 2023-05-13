@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_CITY, CLOSE_CARD } from "./types";
+import { GET_CITY, CLOSE_CARD, ORDER_CARD } from "./types";
 const apiKey = "01e86b8b56ec4c11aff162352231205";
 
 export const getCity = (name) => {
@@ -23,5 +23,12 @@ export const closeCard = (name) => {
   return {
     type: CLOSE_CARD,
     payload: name,
+  };
+};
+
+export const sortCards = (value) => {
+  return {
+    type: ORDER_CARD,
+    payload: value,
   };
 };

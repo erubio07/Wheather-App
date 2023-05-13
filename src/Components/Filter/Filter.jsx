@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Filter.module.css";
 
-function Filter({ handleInputSearch, handleSearch, input }) {
+function Filter({ handleInputSearch, handleSearch, input, handleSort }) {
   return (
     <div className={style.filters}>
       <div>
@@ -20,9 +20,16 @@ function Filter({ handleInputSearch, handleSearch, input }) {
         </button>
       </div>
       <div>
-        <select className={style.filtersselect}>
-          <option className={style.filtersoption}>A-Z</option>
-          <option className={style.filtersoption}>Z-A</option>
+        <select className={style.filtersselect} onChange={(e) => handleSort(e)}>
+          <option className={style.filtersoption} value="-">
+            -
+          </option>
+          <option className={style.filtersoption} value="A-Z">
+            A-Z
+          </option>
+          <option className={style.filtersoption} value="Z-A">
+            Z-A
+          </option>
         </select>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { GET_CITY, CLOSE_CARD } from "./types";
+import { GET_CITY, CLOSE_CARD, ORDER_CARD } from "./types";
 
 const initialState = {
   cities: [],
@@ -19,6 +19,25 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         cities: updatedCities,
+      };
+
+    case ORDER_CARD:
+      const sortedCities =
+        action.payload === "A-Z"
+          ? state.cities.sort((a, b) =>
+              a.location.name.localeCompare(b.location.name, "fr", {
+                ignorePunctuation: true,
+              })
+            )
+          : state.cities.sort((a, b) =>
+              b.location.name.localeCompare(a.location.name, "fr", {
+                ignorePunctuation: true,
+              })
+            );
+
+      return {
+        ...state,
+        cities: sortedCities,
       };
 
     default: {

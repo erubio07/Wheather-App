@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getCity } from "../../Redux/actions";
+import { getCity, sortCards } from "../../Redux/actions";
 import Card from "../../Components/Card/Card";
 import Filter from "../../Components/Filter/Filter";
 import style from "./Home.module.css";
@@ -12,11 +12,11 @@ const Home = () => {
   // console.log(city);
 
   useEffect(() => {
-    if (city.length === 0 || city.updated) {
-      dispatch(getCity());
-    }
+    setFilteredCities(city);
   }, [city, dispatch]);
 
+  const [filteredCities, setFilteredCities] = useState([]);
+  console.log(filteredCities);
   const [input, setInput] = useState("");
 
   const handleInputSearch = (e) => {
@@ -33,15 +33,20 @@ const Home = () => {
     }
   };
 
+  const handleSort = (e) => {
+    dispatch(sortCards(e.target.value));
+  };
+
   return (
     <div className={style.body}>
       <Filter
         handleInputSearch={handleInputSearch}
         handleSearch={handleSearch}
         input={input}
+        handleSort={handleSort}
       />
       <div className={style.cardcontainer}>
-        {city.map((c) => {
+        {filteredCities.map((c) => {
           return (
             <Card
               key={c.location.name}
