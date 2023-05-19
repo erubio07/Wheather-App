@@ -7,16 +7,16 @@ import Filter from "../../Components/Filter/Filter";
 import style from "./Home.module.css";
 
 const Home = () => {
+  // console.log(filteredCities);
   const dispatch = useDispatch();
   const city = useSelector((state) => state.cities);
   // console.log(city);
+  const forceUpdate = React.useReducer((bool) => !bool)[1];
 
   useEffect(() => {
-    setFilteredCities(city);
+    dispatch(getCity());
   }, [city, dispatch]);
 
-  const [filteredCities, setFilteredCities] = useState([]);
-  console.log(filteredCities);
   const [input, setInput] = useState("");
 
   const handleInputSearch = (e) => {
@@ -35,6 +35,7 @@ const Home = () => {
 
   const handleSort = (e) => {
     dispatch(sortCards(e.target.value));
+    forceUpdate();
   };
 
   return (
@@ -46,7 +47,7 @@ const Home = () => {
         handleSort={handleSort}
       />
       <div className={style.cardcontainer}>
-        {filteredCities.map((c) => {
+        {city.map((c) => {
           return (
             <Card
               key={c.location.name}
